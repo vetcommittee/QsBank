@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>بنك الأسئلة البيطرية</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root { --ink:#1e1b4b; --muted:#64748b; --paper:#f8fafc; --card:#ffffff; --purple:#5b21b6; }
     * { box-sizing:border-box; }
@@ -33,73 +33,97 @@
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
  </head>
- <body data-template-id="__page-root">
+ <body>
   <div class="app-shell">
-   <header data-template-id="site-header" class="canva-header surface sticky top-0 z-40 border-b border-purple-100 bg-white/95 shadow-sm backdrop-blur">
+   <header class="canva-header surface sticky top-0 z-40 border-b border-purple-100 bg-white/95 shadow-sm backdrop-blur">
     <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
-     <button type="button" onclick="handleLogoTap()" class="flex min-w-0 items-center gap-3 text-right" aria-label="الصفحة الرئيسية"> <span class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-lg"> <img data-template-id="site-logo" loading="lazy" class="canva-image h-full w-full object-cover"></span> <span class="min-w-0"> <strong data-template-id="brand-name" class="canva-text ink block truncate font-extrabold"></strong> <small data-template-id="brand-subtitle" class="canva-text muted block"></small> </span> </button>
+     <button type="button" onclick="handleLogoTap()" class="flex min-w-0 items-center gap-3 text-right" aria-label="الصفحة الرئيسية"> 
+        <span class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-lg bg-purple-100"> 
+            <img src="https://i.imgur.com/LbeawHO.png" loading="lazy" class="canva-image h-full w-full object-cover p-1">
+        </span> 
+        <span class="min-w-0"> 
+            <strong class="canva-text ink block truncate font-extrabold">بنك الأسئلة البيطرية</strong> 
+            <small class="canva-text muted block">لجنة الطب والجراحة البيطرية</small> 
+        </span> 
+    </button>
      <nav aria-label="التنقل الرئيسي" class="flex items-center gap-1">
-      <button data-template-id="revisions-nav-button" type="button" onclick="showRevisions()" class="canva-button rounded-xl p-2 text-purple-800 hover:bg-purple-50" aria-label="المراجعات"> <i data-lucide="bookmark" class="h-5 w-5"></i> </button> <button data-template-id="theme-button" type="button" onclick="toggleTheme()" class="canva-button rounded-xl p-2 text-purple-800 hover:bg-purple-50" aria-label="تبديل الوضع الداكن"> <i data-lucide="moon" class="h-5 w-5"></i> </button>
+      <button type="button" onclick="showRevisions()" class="canva-button rounded-xl p-2 text-purple-800 hover:bg-purple-50" aria-label="المراجعات"> <i data-lucide="bookmark" class="h-5 w-5"></i> </button> 
+      <button type="button" onclick="toggleTheme()" class="canva-button rounded-xl p-2 text-purple-800 hover:bg-purple-50" aria-label="تبديل الوضع الداكن"> <i data-lucide="moon" class="h-5 w-5"></i> </button>
      </nav>
     </div>
    </header>
    <main class="w-full">
     <section id="home-view" class="view active">
      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-10">
-      <section data-template-id="hero-banner" class="canva-banner hero-pattern relative overflow-hidden rounded-3xl px-6 py-9 text-white shadow-xl sm:px-10 sm:py-12">
-       <div class="absolute inset-y-0 left-0 w-2/5 opacity-30"><img data-template-id="hero-image" loading="lazy" class="canva-image h-full w-full object-cover">
+      
+      <!-- البانر الرئيسي الثابت بالألوان النهدية -->
+      <section class="hero-pattern relative overflow-hidden rounded-3xl px-6 py-9 text-white shadow-xl sm:px-10 sm:py-12 bg-gradient-to-r from-purple-800 to-purple-600">
+       <div class="absolute inset-y-0 left-0 w-2/5 opacity-40">
+        <img src="https://i.imgur.com/Z551ikp.jpeg" loading="lazy" class="h-full w-full object-cover mix-blend-overlay">
        </div>
        <div class="relative">
-        <span data-template-id="hero-tag" class="canva-tag inline-flex rounded-full px-4 py-1.5 font-bold"></span>
-        <h1 data-template-id="hero-title" class="canva-text mt-4 max-w-2xl font-extrabold leading-tight"></h1>
-        <p data-template-id="hero-description" class="canva-text mt-4 max-w-xl leading-8"></p><button data-template-id="hero-button" type="button" onclick="document.getElementById('years-section').scrollIntoView({behavior:'smooth'})" class="canva-button mt-7 rounded-2xl bg-white px-6 py-3 font-extrabold text-purple-800 shadow-lg"></button>
+        <span class="canva-tag inline-flex rounded-full bg-white/20 backdrop-blur-sm px-4 py-1.5 font-bold">بنك الأسئلة البيطرية</span>
+        <h1 class="canva-text mt-4 max-w-2xl font-extrabold leading-tight text-3xl sm:text-4xl">لجنة الطب والجراحة البيطرية</h1>
+        <p class="canva-text mt-4 max-w-xl leading-8 text-purple-100">راجع أسئلتك بسهولة حسب السنة والمادة الدراسية</p>
+        <button type="button" onclick="document.getElementById('years-section').scrollIntoView({behavior:'smooth'})" class="canva-button mt-7 rounded-2xl bg-white px-6 py-3 font-extrabold text-purple-800 shadow-lg hover:bg-purple-50 transition-colors">ابدأ الآن</button>
        </div>
       </section>
-      <section data-template-id="search-panel" class="canva-panel surface mx-auto mt-8 max-w-2xl rounded-3xl border border-purple-100 bg-white p-4 shadow-sm">
+
+      <section class="canva-panel surface mx-auto mt-8 max-w-2xl rounded-3xl border border-purple-100 bg-white p-4 shadow-sm">
        <label for="student-search-input" class="sr-only">ابحث عن سؤال أو مرض</label>
        <div class="flex items-center gap-2">
         <i data-lucide="search" class="h-6 w-6 text-purple-400"></i> <input id="student-search-input" type="search" placeholder="ابحث عن سؤال أو مرض..." class="w-full border-none bg-transparent p-2 text-lg font-bold focus:outline-none" oninput="handleStudentSearch()"> <button type="button" aria-label="مسح البحث" onclick="clearSearch()" class="text-slate-400 hover:text-purple-600"><i data-lucide="x-circle" class="h-5 w-5"></i></button>
        </div>
        <div id="student-search-results" class="mt-4 hidden max-h-80 space-y-3 overflow-y-auto border-t border-purple-50 pt-4" aria-live="polite"></div>
       </section>
+
       <section id="years-section" class="mt-10">
        <div class="mb-5 flex items-end justify-between gap-4">
         <div>
-         <h2 data-template-id="years-title" class="canva-text ink font-extrabold"></h2>
-         <p data-template-id="years-description" class="canva-text muted mt-1"></p>
+         <h2 class="canva-text ink font-extrabold text-2xl">اختر سنتك الأكاديمية</h2>
+         <p class="canva-text muted mt-1">انتقل بخطوات بسيطة إلى موادك وبنوك أسئلتك.</p>
         </div><span id="sheet-status" class="text-xs font-bold text-purple-600">جاري الاتصال بقاعدة البيانات...</span>
        </div>
        <div id="years-grid" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"></div>
       </section>
+      
       <section class="mt-10 grid gap-4 lg:grid-cols-2">
-       <button data-template-id="revisions-card" type="button" onclick="showRevisions()" class="canva-card surface lift rounded-3xl border border-yellow-200 bg-white p-6 text-right shadow-sm"> <i data-lucide="star" class="h-8 w-8 text-yellow-500"></i> <span data-template-id="revisions-card-title" class="canva-text ink mt-4 block font-extrabold"></span> <span data-template-id="revisions-card-description" class="canva-text muted mt-2 block leading-7"></span> </button>
+       <button type="button" onclick="showRevisions()" class="canva-card surface lift rounded-3xl border border-yellow-200 bg-white p-6 text-right shadow-sm w-full"> 
+         <i data-lucide="star" class="h-8 w-8 text-yellow-500"></i> 
+         <span class="canva-text ink mt-4 block font-extrabold text-xl">المراجعات</span> 
+         <span class="canva-text muted mt-2 block leading-7">الأسئلة التي قمت بتعليمها لمراجعتها لاحقاً</span> 
+       </button>
       </section>
      </div>
     </section>
+
     <section id="semester-view" class="view">
      <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <button data-template-id="back-button" type="button" onclick="goHome()" class="canva-button mb-6 inline-flex items-center gap-2 font-bold text-purple-700"><i data-lucide="arrow-right" class="h-4 w-4"></i><span data-template-id="back-button-label" class="canva-text">رجوع</span></button>
+      <button type="button" onclick="goHome()" class="canva-button mb-6 inline-flex items-center gap-2 font-bold text-purple-700"><i data-lucide="arrow-right" class="h-4 w-4"></i><span>رجوع</span></button>
       <div class="surface rounded-3xl bg-white p-6 shadow-sm sm:p-9">
        <span id="selected-year-label" class="text-sm font-bold text-purple-600"></span>
-       <h1 data-template-id="semester-title" class="canva-text ink mt-2 font-extrabold"></h1>
+       <h1 class="canva-text ink mt-2 font-extrabold text-3xl">الفصول الدراسية</h1>
        <div id="semester-grid" class="mt-8 grid gap-4 sm:grid-cols-3"></div>
       </div>
      </div>
     </section>
+
     <section id="subjects-view" class="view">
      <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <button type="button" onclick="showSemesters(appState.year)" class="mb-6 inline-flex items-center gap-2 font-bold text-purple-700"><i data-lucide="arrow-right" class="h-4 w-4"></i>رجوع</button> <span id="subject-context" class="text-sm font-bold text-purple-600"></span>
-      <h1 data-template-id="subjects-title" class="canva-text ink mt-2 font-extrabold"></h1>
+      <h1 class="canva-text ink mt-2 font-extrabold text-3xl">المواد الدراسية</h1>
       <div id="subjects-list" class="mt-7 grid gap-4 sm:grid-cols-2"></div>
      </div>
     </section>
+
     <section id="banks-view" class="view">
      <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <button type="button" onclick="showSubjects(appState.semester)" class="mb-6 inline-flex items-center gap-2 font-bold text-purple-700"><i data-lucide="arrow-right" class="h-4 w-4"></i>رجوع</button> <span id="bank-context" class="text-sm font-bold text-purple-600"></span>
-      <h1 data-template-id="banks-title" class="canva-text ink mt-2 font-extrabold"></h1>
+      <h1 class="canva-text ink mt-2 font-extrabold text-3xl">بنوك الأسئلة</h1>
       <div id="banks-list" class="mt-7 grid gap-4 sm:grid-cols-2"></div>
      </div>
     </section>
+
     <section id="quiz-view" class="view">
      <div class="mx-auto max-w-3xl px-4 py-7 sm:px-6">
       <div class="mb-5 flex items-center justify-between">
@@ -115,46 +139,49 @@
         <div id="progress-bar" class="h-full rounded-full bg-purple-700 transition-all"></div>
        </div>
       </div>
-      <article data-template-id="quiz-card" class="canva-card surface rounded-3xl bg-white p-6 shadow-xl">
+      <article class="canva-card surface rounded-3xl bg-white p-6 shadow-xl">
        <div class="mb-5 flex items-center gap-3">
         <span id="question-number" class="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-100 font-extrabold text-purple-700"></span> <span id="quiz-bank-name" class="text-sm font-bold text-purple-600"></span>
        </div><img id="question-image" onclick="if(this.src)window.open(this.src,'_blank')" class="mb-5 hidden max-h-72 w-full cursor-pointer rounded-2xl object-cover" loading="lazy">
        <p id="question-text" class="ink font-bold leading-9"></p>
        <div id="options-list" class="mt-7 space-y-3"></div>
        <aside id="explanation-area" class="mt-6 hidden rounded-2xl border border-purple-200 bg-purple-50 p-5">
-        <h2 data-template-id="explanation-title" class="canva-text font-extrabold text-purple-950"></h2>
+        <h2 class="canva-text font-extrabold text-purple-950 text-lg">تفسير الإجابة</h2>
         <p id="explanation-text" class="mt-2 leading-7 text-purple-900"></p>
        </aside>
        <div class="mt-7 flex justify-between border-t pt-5">
-        <button data-template-id="previous-button" id="prev-btn" type="button" onclick="moveQuestion(-1)" class="canva-button rounded-xl border border-purple-200 px-4 py-2 font-bold"></button> <button data-template-id="next-button" type="button" onclick="moveQuestion(1)" class="canva-button rounded-xl bg-purple-700 px-5 py-2 font-bold text-white"></button>
+        <button id="prev-btn" type="button" onclick="moveQuestion(-1)" class="canva-button rounded-xl border border-purple-200 px-4 py-2 font-bold">السابق</button> <button type="button" onclick="moveQuestion(1)" class="canva-button rounded-xl bg-purple-700 px-5 py-2 font-bold text-white">التالي</button>
        </div>
       </article>
      </div>
     </section>
+
     <section id="summary-view" class="view">
      <div class="mx-auto max-w-xl px-4 py-10">
-      <div data-template-id="summary-panel" class="canva-panel surface rounded-3xl bg-white p-8 text-center shadow-xl">
+      <div class="canva-panel surface rounded-3xl bg-white p-8 text-center shadow-xl">
        <i data-lucide="award" class="mx-auto h-12 w-12 text-green-600"></i>
-       <h1 data-template-id="summary-title" class="canva-text ink mt-5 font-extrabold"></h1>
+       <h1 class="canva-text ink mt-5 font-extrabold text-2xl">اكتملت المراجعة!</h1>
        <div class="mt-7 grid grid-cols-2 gap-3">
-        <div class="rounded-2xl bg-purple-50 p-5"><span data-template-id="score-label" class="canva-text text-sm font-bold"></span><strong id="summary-score" class="block text-3xl font-extrabold text-purple-800"></strong>
+        <div class="rounded-2xl bg-purple-50 p-5"><span class="canva-text text-sm font-bold">النتيجة</span><strong id="summary-score" class="block text-3xl font-extrabold text-purple-800"></strong>
         </div>
-        <div class="rounded-2xl bg-purple-50 p-5"><span data-template-id="time-label" class="canva-text text-sm font-bold"></span><strong id="summary-time" class="block text-3xl font-extrabold text-purple-800"></strong>
+        <div class="rounded-2xl bg-purple-50 p-5"><span class="canva-text text-sm font-bold">الوقت المستغرق</span><strong id="summary-time" class="block text-3xl font-extrabold text-purple-800"></strong>
         </div>
        </div>
        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-        <button data-template-id="summary-review-button" type="button" onclick="showRevisions()" class="canva-button flex-1 rounded-xl border border-purple-200 py-3 font-extrabold"></button> <button data-template-id="summary-home-button" type="button" onclick="goHome()" class="canva-button flex-1 rounded-xl bg-purple-700 py-3 font-extrabold text-white"></button>
+        <button type="button" onclick="showRevisions()" class="canva-button flex-1 rounded-xl border border-purple-200 py-3 font-extrabold">الأسئلة المعلمة</button> <button type="button" onclick="goHome()" class="canva-button flex-1 rounded-xl bg-purple-700 py-3 font-extrabold text-white">الرئيسية</button>
        </div>
       </div>
      </div>
     </section>
+
     <section id="revisions-view" class="view">
      <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <button type="button" onclick="goHome()" class="mb-6 inline-flex items-center gap-2 font-bold text-purple-700"><i data-lucide="arrow-right" class="h-4 w-4"></i>رجوع</button>
-      <h1 data-template-id="revisions-title" class="canva-text ink font-extrabold"></h1>
+      <h1 class="canva-text ink font-extrabold text-3xl">الأسئلة المعلمة للمراجعة</h1>
       <div id="revisions-list" class="mt-7 space-y-4"></div>
      </div>
     </section>
+
     <section id="admin-pin-view" class="view">
      <div class="mx-auto max-w-md px-4 py-14">
       <form id="admin-pin-form" class="surface rounded-3xl border border-purple-100 bg-white p-7 shadow-xl">
@@ -166,31 +193,32 @@
       </form>
      </div>
     </section>
+
     <section id="admin-view" class="view">
      <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <button type="button" onclick="goHome()" class="mb-6 inline-flex items-center gap-2 font-bold text-purple-700"><i data-lucide="arrow-right" class="h-4 w-4"></i>رجوع</button>
       <div class="flex flex-wrap items-center justify-between gap-3">
-       <h1 data-template-id="admin-title" class="canva-text ink font-extrabold">لوحة الإدارة</h1><button type="button" onclick="openBackupModal()" class="rounded-xl bg-purple-700 px-4 py-2 font-bold text-white">إدارة النسخ الاحتياطية</button>
+       <h1 class="canva-text ink font-extrabold text-3xl">لوحة الإدارة</h1><button type="button" onclick="openBackupModal()" class="rounded-xl bg-purple-700 px-4 py-2 font-bold text-white">إدارة النسخ الاحتياطية</button>
       </div>
       <p id="admin-message" class="mt-4 hidden rounded-xl p-4 font-bold" aria-live="polite"></p>
       <section class="surface mt-6 rounded-3xl bg-white p-4 shadow-sm sm:p-6">
        <div class="grid gap-5 lg:grid-cols-[.85fr_.85fr_1.7fr]">
         <aside class="rounded-2xl border border-purple-100 bg-purple-50/40 p-4">
          <div class="mb-4 flex items-center justify-between">
-          <h2 data-template-id="admin-subjects-heading" class="canva-text ink font-extrabold">المواد</h2><button type="button" onclick="openSubjectForm()" class="rounded-xl bg-purple-700 px-3 py-2 text-sm font-bold text-white" aria-label="إضافة مادة"><i data-lucide="plus" class="h-4 w-4"></i></button>
+          <h2 class="canva-text ink font-extrabold text-lg">المواد</h2><button type="button" onclick="openSubjectForm()" class="rounded-xl bg-purple-700 px-3 py-2 text-sm font-bold text-white" aria-label="إضافة مادة"><i data-lucide="plus" class="h-4 w-4"></i></button>
          </div>
          <div id="admin-subject-list" class="max-h-96 space-y-2 overflow-y-auto"></div>
         </aside>
         <aside class="rounded-2xl border border-purple-100 bg-purple-50/40 p-4">
          <div class="mb-4 flex items-center justify-between">
-          <h2 data-template-id="admin-banks-heading" class="canva-text ink font-extrabold">بنوك الأسئلة</h2><button type="button" onclick="openBankForm()" class="rounded-xl bg-purple-700 px-3 py-2 text-sm font-bold text-white" aria-label="إضافة بنك"><i data-lucide="plus" class="h-4 w-4"></i></button>
+          <h2 class="canva-text ink font-extrabold text-lg">بنوك الأسئلة</h2><button type="button" onclick="openBankForm()" class="rounded-xl bg-purple-700 px-3 py-2 text-sm font-bold text-white" aria-label="إضافة بنك"><i data-lucide="plus" class="h-4 w-4"></i></button>
          </div>
          <div id="admin-bank-list" class="max-h-96 space-y-2 overflow-y-auto"></div>
         </aside>
         <section>
          <div class="mb-4 flex items-center justify-between">
           <div>
-           <h2 data-template-id="admin-questions-heading" class="canva-text ink font-extrabold">الأسئلة</h2>
+           <h2 class="canva-text ink font-extrabold text-lg">الأسئلة</h2>
            <p id="selected-bank-caption" class="muted mt-1 text-sm"></p>
           </div><button type="button" onclick="openQuestionForm()" class="rounded-xl bg-purple-700 px-4 py-2 font-bold text-white" aria-label="إضافة سؤال"><i data-lucide="plus" class="h-4 w-4"></i></button>
          </div><input id="question-search" type="search" placeholder="ابحث في أسئلة البنك..." class="mb-3 w-full rounded-xl border border-purple-200 p-3" oninput="renderAdminQuestions()">
@@ -200,16 +228,16 @@
       </section>
       <div class="mt-6 grid gap-6 xl:grid-cols-2">
        <form id="subject-form" class="surface hidden rounded-3xl bg-white p-6 shadow-sm">
-        <h2 data-template-id="subject-form-title" class="canva-text ink font-extrabold">إضافة / تعديل مادة</h2><label for="subject-year" class="mt-4 block font-bold">السنة</label> <select id="subject-year" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="subject-semester" class="mt-4 block font-bold">الفصل</label> <select id="subject-semester" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="subject-name" class="mt-4 block font-bold">اسم المادة</label> <input id="subject-name" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"> <button data-template-id="save-subject-button" type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">حفظ المادة</button>
+        <h2 class="canva-text ink font-extrabold text-xl">إضافة / تعديل مادة</h2><label for="subject-year" class="mt-4 block font-bold">السنة</label> <select id="subject-year" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="subject-semester" class="mt-4 block font-bold">الفصل</label> <select id="subject-semester" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="subject-name" class="mt-4 block font-bold">اسم المادة</label> <input id="subject-name" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"> <button type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">حفظ المادة</button>
        </form>
        <form id="bank-form" class="surface hidden rounded-3xl bg-white p-6 shadow-sm">
-        <h2 data-template-id="bank-form-title" class="canva-text ink font-extrabold">إضافة / تعديل بنك</h2><label for="bank-subject" class="mt-4 block font-bold">المادة</label> <select id="bank-subject" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="bank-name" class="mt-4 block font-bold">اسم البنك</label> <input id="bank-name" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"> <button data-template-id="save-bank-button" type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">حفظ البنك</button>
+        <h2 class="canva-text ink font-extrabold text-xl">إضافة / تعديل بنك</h2><label for="bank-subject" class="mt-4 block font-bold">المادة</label> <select id="bank-subject" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="bank-name" class="mt-4 block font-bold">اسم البنك</label> <input id="bank-name" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"> <button type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">حفظ البنك</button>
        </form>
        <form id="question-form" class="surface hidden rounded-3xl bg-white p-6 shadow-sm xl:col-span-2">
-        <h2 data-template-id="question-form-title" class="canva-text ink font-extrabold">إضافة / تعديل سؤال</h2><label for="question-bank" class="mt-4 block font-bold">البنك</label> <select id="question-bank" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="question-text-input" class="mt-4 block font-bold">نص السؤال</label> <textarea id="question-text-input" required rows="3" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></textarea><label for="admin-image-url" class="mt-4 block font-bold">رابط صورة السؤال (اختياري)</label> <input id="admin-image-url" type="text" class="mt-2 w-full rounded-xl border border-purple-200 p-3">
+        <h2 class="canva-text ink font-extrabold text-xl">إضافة / تعديل سؤال</h2><label for="question-bank" class="mt-4 block font-bold">البنك</label> <select id="question-bank" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="question-text-input" class="mt-4 block font-bold">نص السؤال</label> <textarea id="question-text-input" required rows="3" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></textarea><label for="admin-image-url" class="mt-4 block font-bold">رابط صورة السؤال (اختياري)</label> <input id="admin-image-url" type="text" class="mt-2 w-full rounded-xl border border-purple-200 p-3">
         <div class="mt-3 grid grid-cols-2 gap-3">
          <input id="opt-a" required placeholder="الخيار A" class="rounded-xl border border-purple-200 p-3"> <input id="opt-b" required placeholder="الخيار B" class="rounded-xl border border-purple-200 p-3"> <input id="opt-c" required placeholder="الخيار C" class="rounded-xl border border-purple-200 p-3"> <input id="opt-d" required placeholder="الخيار D" class="rounded-xl border border-purple-200 p-3">
-        </div><label for="correct-answer" class="mt-4 block font-bold">الإجابة الصحيحة</label> <select id="correct-answer" class="mt-2 w-full rounded-xl border border-purple-200 p-3"><option>A</option><option>B</option><option>C</option><option>D</option></select> <label for="explanation" class="mt-4 block font-bold">التفسير</label> <textarea id="explanation" rows="2" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></textarea> <button data-template-id="save-question-button" type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">حفظ السؤال</button>
+        </div><label for="correct-answer" class="mt-4 block font-bold">الإجابة الصحيحة</label> <select id="correct-answer" class="mt-2 w-full rounded-xl border border-purple-200 p-3"><option>A</option><option>B</option><option>C</option><option>D</option></select> <label for="explanation" class="mt-4 block font-bold">التفسير</label> <textarea id="explanation" rows="2" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></textarea> <button type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">حفظ السؤال</button>
        </form>
       </div>
       <section class="surface mt-6 rounded-3xl bg-white p-6 shadow-sm">
@@ -230,15 +258,17 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
      </div>
     </section>
    </main>
+   
    <div id="resume-modal" class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
-    <section data-template-id="resume-modal-panel" class="canva-panel surface w-full max-w-md rounded-3xl bg-white p-7 shadow-2xl">
-     <h2 data-template-id="resume-modal-title" class="canva-text ink font-extrabold">متابعة الاختبار</h2>
-     <p data-template-id="resume-modal-description" class="canva-text muted mt-3 leading-7">لديك جلسة مراجعة سابقة في هذا البنك. هل ترغب في المتابعة من حيث توقفت؟</p>
+    <section class="canva-panel surface w-full max-w-md rounded-3xl bg-white p-7 shadow-2xl">
+     <h2 class="canva-text ink font-extrabold text-2xl">متابعة الاختبار</h2>
+     <p class="canva-text muted mt-3 leading-7">لديك جلسة مراجعة سابقة في هذا البنك. هل ترغب في المتابعة من حيث توقفت؟</p>
      <div class="mt-6 grid gap-3 sm:grid-cols-2">
-      <button data-template-id="restart-button" type="button" onclick="chooseResume(false)" class="canva-button rounded-xl border border-purple-200 py-3 font-bold">البدء من جديد</button> <button data-template-id="continue-button" type="button" onclick="chooseResume(true)" class="canva-button rounded-xl bg-purple-700 py-3 font-bold text-white">متابعة المراجعة</button>
+      <button type="button" onclick="chooseResume(false)" class="canva-button rounded-xl border border-purple-200 py-3 font-bold">البدء من جديد</button> <button type="button" onclick="chooseResume(true)" class="canva-button rounded-xl bg-purple-700 py-3 font-bold text-white">متابعة المراجعة</button>
      </div>
     </section>
    </div>
+   
    <div id="backup-modal" class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
     <section class="surface w-full max-w-2xl rounded-3xl bg-white p-7 shadow-2xl">
      <h2 class="ink text-2xl font-extrabold">إدارة النسخ الاحتياطية</h2><label for="backup-export" class="mt-4 block font-bold">البيانات المصدّرة</label><textarea id="backup-export" readonly rows="6" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></textarea><button type="button" onclick="copyBackup()" class="mt-2 rounded-xl bg-purple-700 px-4 py-2 font-bold text-white">نسخ النص</button><label for="backup-import" class="mt-5 block font-bold">استعادة البيانات</label><textarea id="backup-import" rows="6" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></textarea>
@@ -247,23 +277,23 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
      </div>
     </section>
    </div>
+
    <div id="delete-modal" class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
-    <section data-template-id="delete-modal-panel" class="canva-panel surface w-full max-w-md rounded-3xl bg-white p-7 shadow-2xl">
+    <section class="canva-panel surface w-full max-w-md rounded-3xl bg-white p-7 shadow-2xl">
      <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-red-100 text-red-700"><i data-lucide="trash-2"></i>
      </div>
-     <h2 data-template-id="delete-modal-title" class="canva-text ink mt-4 font-extrabold">تأكيد الحذف</h2>
+     <h2 class="canva-text ink mt-4 font-extrabold text-2xl">تأكيد الحذف</h2>
      <p id="delete-message" class="muted mt-3 leading-7"></p>
      <div class="mt-6 flex gap-3">
-      <button data-template-id="cancel-delete-button" type="button" onclick="closeDeleteModal()" class="canva-button flex-1 rounded-xl border border-purple-200 py-3 font-bold">إلغاء</button> <button data-template-id="confirm-delete-button" id="delete-confirm-button" type="button" class="canva-button flex-1 rounded-xl bg-red-600 py-3 font-bold text-white">تأكيد الحذف</button>
+      <button type="button" onclick="closeDeleteModal()" class="canva-button flex-1 rounded-xl border border-purple-200 py-3 font-bold">إلغاء</button> <button id="delete-confirm-button" type="button" class="canva-button flex-1 rounded-xl bg-red-600 py-3 font-bold text-white">تأكيد الحذف</button>
      </div>
     </section>
    </div>
+
    <div id="toast" class="toast fixed bottom-5 left-1/2 z-[60] rounded-xl bg-slate-900 px-5 py-3 font-bold text-white shadow-xl" aria-live="polite"></div>
   </div>
+
   <script type="module">
-    // -------------------------------------------------------------------------
-    // Firebase Adapter - Overriding Canva dataSdk
-    // -------------------------------------------------------------------------
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
     import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
     
@@ -291,7 +321,6 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
                 const querySnapshot = await this.getDocs(this.collection(this._db, "vet_records"));
                 const records = querySnapshot.docs.map(d => d.data());
                 
-                // Directly pass data to the handler exactly as the Canva SDK would
                 if (handler && handler.onDataChanged) {
                     handler.onDataChanged(records);
                 } else if (typeof handler === "function") {
@@ -300,7 +329,6 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
                      handler.onDataChangedCallback(records);
                 }
                 
-                // Expose a global callback trigger for the initialization logic
                 if(window.__triggerDataChanged) {
                     window.__triggerDataChanged(records);
                 }
@@ -335,15 +363,11 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
         }
     };
 
-    // -------------------------------------------------------------------------
-    // Main Application Logic
-    // -------------------------------------------------------------------------
     const years = [1,2,3,4,5,6];
     const semesters = ["الفصل الأول","الفصل الثاني","الفصل الصيفي"];
     const blank = {type:"",year:"",semester:"",subject_name:"",subject_year:"",subject_semester:"",bank_name:"",bank_id:"",questions_json:"[]",subject_id:"",order_index:0,site_name:"",logo_url:"",logo_background:"",flagged_ids:"[]",progress_bank_id:"",progress_question_index:0,progress_answers:"{}",progress_elapsed:0,dark_mode:"no",progress_order:"",_uid:""};
     const appState = {records:[],year:"",semester:"",subject:null,bank:null,questions:[],index:0,answers:{},flagged:[],started:0,timer:null,user:null,adminSubjectId:"",adminBankId:"",editing:{subject:null,bank:null,question:null},pendingDelete:null,pendingImport:[],savingUser:false};
     
-    // Make global for inline handlers
     window.appState = appState;
     window.years = years;
     window.semesters = semesters;
