@@ -913,7 +913,7 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
         if (incoming.length === 0) {
             $("sheet-status").innerHTML = `<span class="rounded-lg bg-green-100 px-3 py-1 text-green-700">قاعدة البيانات جاهزة: 0 سجلات</span>`;
         } else {
-            $("sheet-status").innerHTML = `<span class="rounded-lg bg-green-100 px-3 py-1 text-green-700">✅ متصل بـ Firebase: ${incoming.length} سجل</span>`;
+            $("sheet-status").innerHTML = `<span class="rounded-lg bg-green-100 px-3 py-1 text-green-700">✅ متصل بـ : ${incoming.length} سجل</span>`;
         }
 
         appState.records = incoming.map(record => {
@@ -943,7 +943,7 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
     async function initialize(){
       icons(); 
       renderYears();
-      initialLoadTimer = setTimeout(() => { $("sheet-status").textContent = "جاري الاتصال بـ Firebase..."; }, 3000);
+      initialLoadTimer = setTimeout(() => { $("sheet-status").textContent = "جاري الاتصال بـ ..."; }, 3000);
       
       const result = await window.dataSdk.init();
       
