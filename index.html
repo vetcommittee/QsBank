@@ -142,7 +142,11 @@
       <article class="canva-card surface rounded-3xl bg-white p-6 shadow-xl">
        <div class="mb-5 flex items-center gap-3">
         <span id="question-number" class="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-100 font-extrabold text-purple-700"></span> <span id="quiz-bank-name" class="text-sm font-bold text-purple-600"></span>
-       </div><img id="question-image" onclick="if(this.src)window.open(this.src,'_blank')" class="mb-5 hidden max-h-72 w-full cursor-pointer rounded-2xl object-cover" loading="lazy">
+       </div>
+       
+       <!-- تم تعديل كود الصورة لتظهر كاملة دون قص -->
+       <img id="question-image" onclick="if(this.src)window.open(this.src,'_blank')" class="mb-5 hidden max-h-96 w-full cursor-pointer rounded-2xl object-contain bg-slate-50" loading="lazy">
+       
        <p id="question-text" class="ink font-bold leading-9"></p>
        <div id="options-list" class="mt-7 space-y-3"></div>
        <aside id="explanation-area" class="mt-6 hidden rounded-2xl border border-purple-200 bg-purple-50 p-5">
@@ -207,6 +211,17 @@
          <div class="mb-4 flex items-center justify-between">
           <h2 class="canva-text ink font-extrabold text-lg">المواد</h2><button type="button" onclick="openSubjectForm()" class="rounded-xl bg-purple-700 px-3 py-2 text-sm font-bold text-white" aria-label="إضافة مادة"><i data-lucide="plus" class="h-4 w-4"></i></button>
          </div>
+         
+         <!-- تم إضافة فلاتر السنة والفصل -->
+         <div class="mb-3 grid grid-cols-2 gap-2">
+          <select id="admin-filter-year" class="rounded-xl border border-purple-200 p-2 text-sm font-bold" onchange="renderAdmin()">
+              <option value="all">كل السنوات</option><option value="1">السنة 1</option><option value="2">السنة 2</option><option value="3">السنة 3</option><option value="4">السنة 4</option><option value="5">السنة 5</option><option value="6">السنة 6</option>
+          </select>
+          <select id="admin-filter-semester" class="rounded-xl border border-purple-200 p-2 text-sm font-bold" onchange="renderAdmin()">
+              <option value="all">كل الفصول</option><option value="الفصل الأول">الفصل الأول</option><option value="الفصل الثاني">الفصل الثاني</option><option value="الفصل الصيفي">الصيفي</option>
+          </select>
+         </div>
+         
          <div id="admin-subject-list" class="max-h-96 space-y-2 overflow-y-auto"></div>
         </aside>
         <aside class="rounded-2xl border border-purple-100 bg-purple-50/40 p-4">
@@ -639,20 +654,36 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       $("subject-year").innerHTML=years.map(y=>`<option value="${y}">السنة ${y}</option>`).join("");
       $("subject-semester").innerHTML=semesters.map(s=>`<option value="${s}">${s}</option>`).join("");
       const subjects=records("subject");
-      const banks=records("bank");
       $("bank-subject").innerHTML=subjects.map(s=>`<option value="${getId(s)}">${esc(s.subject_name)}</option>`).join("");
-      $("question-bank").innerHTML=banks.map(b=>`<option value="${getId(b)}">${esc(b.bank_name)}</option>`).join("");
-      if($("import-bank")) $("import-bank").innerHTML=banks.map(b=>`<option value="${getId(b)}">${esc(b.bank_name)}</option>`).join("");
+      // تم نقل تحديث قوائم البنوك (question-bank و import-bank) إلى renderAdmin ليتم فلترتها ديناميكياً
     }
     window.populateSelects = populateSelects;
 
     function renderAdmin(){
-      const subjects=records("subject");
-      if(!appState.adminSubjectId && subjects[0]) appState.adminSubjectId=getId(subjects[0]);
+      const filterYear=$("admin-filter-year")?$("admin-filter-year").value:"all";
+      const filterSemester=$("admin-filter-semester")?$("admin-filter-semester").value:"all";
+      let subjects=records("subject");
+      if(filterYear!=="all") subjects=subjects.filter(s=>String(s.year)===filterYear);
+      if(filterSemester!=="all") subjects=subjects.filter(s=>String(s.semester)===filterSemester);
+      
+      if(!subjects.some(s=>String(getId(s))===String(appState.adminSubjectId)) && subjects[0]) appState.adminSubjectId=getId(subjects[0]);
+      else if(subjects.length===0) appState.adminSubjectId="";
+
       const banks=records("bank").filter(b=>String(b.subject_id)===String(appState.adminSubjectId));
       if(!banks.some(b=>String(getId(b))===String(appState.adminBankId))) appState.adminBankId=banks[0]?getId(banks[0]):"";
-      $("admin-subject-list").innerHTML=subjects.length ? subjects.map(s=>`<div class="flex gap-2"><button onclick="selectAdminSubject('${getId(s)}')" class="flex-1 rounded-xl border border-purple-100 p-3 text-right font-bold ${String(getId(s))===String(appState.adminSubjectId)?"bg-purple-700 text-white":"bg-white text-purple-950"}">${esc(s.subject_name)}<small class="mt-1 block opacity-75">${s.year} · ${esc(s.semester)}</small></button><button onclick="openSubjectForm('${getId(s)}')" class="rounded-xl bg-blue-50 px-3 text-sm text-blue-700">تعديل</button><button onclick="askDelete('subject','${getId(s)}')" class="rounded-xl bg-red-50 px-3 text-sm text-red-700">حذف</button></div>`).join("") : `<p class="muted text-sm">لا توجد مواد بعد.</p>`;
-      $("admin-bank-list").innerHTML=banks.length ? banks.map(b=>`<div class="flex gap-2"><button onclick="selectAdminBank('${getId(b)}')" class="flex-1 rounded-xl border border-purple-100 p-3 text-right font-bold ${String(getId(b))===String(appState.adminBankId)?"bg-purple-700 text-white":"bg-white text-purple-950"}">${esc(b.bank_name)}<small class="mt-1 block opacity-75">${parseQuestions(b).length} سؤال</small></button><button onclick="openBankForm('${getId(b)}')" class="rounded-xl bg-blue-50 px-3 text-sm text-blue-700">تعديل</button><button onclick="askDelete('bank','${getId(b)}')" class="rounded-xl bg-red-50 px-3 text-sm text-red-700">حذف</button></div>`).join("") : `<p class="muted text-sm">أضف بنكاً بعد اختيار مادة.</p>`;
+      
+      $("admin-subject-list").innerHTML=subjects.length ? subjects.map(s=>`<div class="flex gap-2"><button onclick="selectAdminSubject('${getId(s)}')" class="flex-1 rounded-xl border border-purple-100 p-3 text-right font-bold ${String(getId(s))===String(appState.adminSubjectId)?"bg-purple-700 text-white":"bg-white text-purple-950"}">${esc(s.subject_name)}<small class="mt-1 block opacity-75">${s.year} · ${esc(s.semester)}</small></button><button onclick="openSubjectForm('${getId(s)}')" class="rounded-xl bg-blue-50 px-3 text-sm text-blue-700">تعديل</button><button onclick="askDelete('subject','${getId(s)}')" class="rounded-xl bg-red-50 px-3 text-sm text-red-700">حذف</button></div>`).join("") : `<p class="muted text-sm">لا توجد مواد تطابق الفلتر.</p>`;
+      $("admin-bank-list").innerHTML=banks.length ? banks.map(b=>`<div class="flex gap-2"><button onclick="selectAdminBank('${getId(b)}')" class="flex-1 rounded-xl border border-purple-100 p-3 text-right font-bold ${String(getId(b))===String(appState.adminBankId)?"bg-purple-700 text-white":"bg-white text-purple-950"}">${esc(b.bank_name)}<small class="mt-1 block opacity-75">${parseQuestions(b).length} سؤال</small></button><button onclick="openBankForm('${getId(b)}')" class="rounded-xl bg-blue-50 px-3 text-sm text-blue-700">تعديل</button><button onclick="askDelete('bank','${getId(b)}')" class="rounded-xl bg-red-50 px-3 text-sm text-red-700">حذف</button></div>`).join("") : `<p class="muted text-sm">أضف أو اختر مادة لعرض بنوكها.</p>`;
+      
+      if($("question-bank")) {
+          $("question-bank").innerHTML = banks.length ? banks.map(b=>`<option value="${getId(b)}">${esc(b.bank_name)}</option>`).join("") : `<option value="">لا توجد بنوك لهذه المادة</option>`;
+          $("question-bank").value = appState.adminBankId;
+      }
+      if($("import-bank")) {
+          $("import-bank").innerHTML = banks.length ? banks.map(b=>`<option value="${getId(b)}">${esc(b.bank_name)}</option>`).join("") : `<option value="">لا توجد بنوك لهذه المادة</option>`;
+          $("import-bank").value = appState.adminBankId;
+      }
+      
       renderAdminQuestions(); icons();
     }
     window.renderAdmin = renderAdmin;
