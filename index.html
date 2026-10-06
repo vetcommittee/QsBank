@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بنك الأسئلة </title>
+  <title>بنك الأسئلة البيطرية</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root { --ink:#1e1b4b; --muted:#64748b; --paper:#f8fafc; --card:#ffffff; --purple:#5b21b6; }
@@ -42,7 +42,7 @@
             <img src="https://i.imgur.com/LbeawHO.png" loading="lazy" class="canva-image h-full w-full object-cover p-1">
         </span> 
         <span class="min-w-0"> 
-            <strong class="canva-text ink block truncate font-extrabold">بنك الأسئلة </strong> 
+            <strong class="canva-text ink block truncate font-extrabold">بنك الأسئلة البيطرية</strong> 
             <small class="canva-text muted block">لجنة الطب والجراحة البيطرية</small> 
         </span> 
     </button>
@@ -56,13 +56,12 @@
     <section id="home-view" class="view active">
      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-10">
       
-      <!-- البانر الرئيسي الثابت بالألوان النهدية -->
       <section class="hero-pattern relative overflow-hidden rounded-3xl px-6 py-9 text-white shadow-xl sm:px-10 sm:py-12 bg-gradient-to-r from-purple-800 to-purple-600">
        <div class="absolute inset-y-0 left-0 w-2/5 opacity-40">
         <img src="https://i.imgur.com/Z551ikp.jpeg" loading="lazy" class="h-full w-full object-cover mix-blend-overlay">
        </div>
        <div class="relative">
-        <span class="canva-tag inline-flex rounded-full bg-white/20 backdrop-blur-sm px-4 py-1.5 font-bold">بنك الأسئلة </span>
+        <span class="canva-tag inline-flex rounded-full bg-white/20 backdrop-blur-sm px-4 py-1.5 font-bold">بنك الأسئلة البيطرية</span>
         <h1 class="canva-text mt-4 max-w-2xl font-extrabold leading-tight text-3xl sm:text-4xl">لجنة الطب والجراحة البيطرية</h1>
         <p class="canva-text mt-4 max-w-xl leading-8 text-purple-100">راجع أسئلتك بسهولة حسب السنة والمادة الدراسية</p>
         <button type="button" onclick="document.getElementById('years-section').scrollIntoView({behavior:'smooth'})" class="canva-button mt-7 rounded-2xl bg-white px-6 py-3 font-extrabold text-purple-800 shadow-lg hover:bg-purple-50 transition-colors">ابدأ الآن</button>
@@ -144,7 +143,6 @@
         <span id="question-number" class="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-100 font-extrabold text-purple-700"></span> <span id="quiz-bank-name" class="text-sm font-bold text-purple-600"></span>
        </div>
        
-       <!-- تم تعديل كود الصورة لتظهر كاملة دون قص -->
        <img id="question-image" onclick="if(this.src)window.open(this.src,'_blank')" class="mb-5 hidden max-h-96 w-full cursor-pointer rounded-2xl object-contain bg-slate-50" loading="lazy">
        
        <p id="question-text" class="ink font-bold leading-9"></p>
@@ -191,9 +189,17 @@
       <form id="admin-pin-form" class="surface rounded-3xl border border-purple-100 bg-white p-7 shadow-xl">
        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-100 text-purple-700"><i data-lucide="shield-check"></i>
        </div>
-       <h1 class="canva-text ink mt-5 font-extrabold text-xl">دخول الإدارة</h1>
-       <p class="canva-text muted mt-2 leading-7">أدخل رمز الدخول الخاص بالإدارة</p><label for="admin-pin-input" class="mt-6 block font-bold">رمز الدخول</label> <input id="admin-pin-input" type="password" autocomplete="off" required dir="ltr" class="mt-2 w-full rounded-xl border border-purple-200 p-3 text-center tracking-[.2em]">
-       <p id="admin-pin-error" class="mt-3 hidden rounded-xl bg-red-50 p-3 font-bold text-red-700" aria-live="polite">رمز PIN غير صحيح. حاول مرة أخرى.</p><button type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">دخول</button>
+       <h1 class="canva-text ink mt-5 font-extrabold text-xl">دخول الإدارة الآمن</h1>
+       <p class="canva-text muted mt-2 leading-7">أدخل البريد الإلكتروني وكلمة المرور للإدارة</p>
+       
+       <label for="admin-email-input" class="mt-6 block font-bold">البريد الإلكتروني</label> 
+       <input id="admin-email-input" type="email" required dir="ltr" class="mt-2 w-full rounded-xl border border-purple-200 p-3 text-center">
+       
+       <label for="admin-pass-input" class="mt-4 block font-bold">كلمة المرور</label> 
+       <input id="admin-pass-input" type="password" required dir="ltr" class="mt-2 w-full rounded-xl border border-purple-200 p-3 text-center tracking-[.2em]">
+       
+       <p id="admin-pin-error" class="mt-3 hidden rounded-xl bg-red-50 p-3 font-bold text-red-700" aria-live="polite"></p>
+       <button type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">دخول</button>
       </form>
      </div>
     </section>
@@ -212,7 +218,6 @@
           <h2 class="canva-text ink font-extrabold text-lg">المواد</h2><button type="button" onclick="openSubjectForm()" class="rounded-xl bg-purple-700 px-3 py-2 text-sm font-bold text-white" aria-label="إضافة مادة"><i data-lucide="plus" class="h-4 w-4"></i></button>
          </div>
          
-         <!-- تم إضافة فلاتر السنة والفصل -->
          <div class="mb-3 grid grid-cols-2 gap-2">
           <select id="admin-filter-year" class="rounded-xl border border-purple-200 p-2 text-sm font-bold" onchange="renderAdmin()">
               <option value="all">كل السنوات</option><option value="1">السنة 1</option><option value="2">السنة 2</option><option value="3">السنة 3</option><option value="4">السنة 4</option><option value="5">السنة 5</option><option value="6">السنة 6</option>
@@ -248,8 +253,26 @@
        <form id="bank-form" class="surface hidden rounded-3xl bg-white p-6 shadow-sm">
         <h2 class="canva-text ink font-extrabold text-xl">إضافة / تعديل بنك</h2><label for="bank-subject" class="mt-4 block font-bold">المادة</label> <select id="bank-subject" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="bank-name" class="mt-4 block font-bold">اسم البنك</label> <input id="bank-name" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"> <label for="bank-author" class="mt-4 block font-bold">إعداد (اسم المُعد - اختياري)</label> <input id="bank-author" class="mt-2 w-full rounded-xl border border-purple-200 p-3" placeholder="مثال: د. عدي إسماعيل"> <button type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">حفظ البنك</button>
        </form>
+       
        <form id="question-form" class="surface hidden rounded-3xl bg-white p-6 shadow-sm xl:col-span-2">
-        <h2 class="canva-text ink font-extrabold text-xl">إضافة / تعديل سؤال</h2><label for="question-bank" class="mt-4 block font-bold">البنك</label> <select id="question-bank" required class="mt-2 w-full rounded-xl border border-purple-200 p-3"></select> <label for="question-text-input" class="mt-4 block font-bold">نص السؤال</label> <textarea id="question-text-input" required rows="3" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></textarea><label for="admin-image-url" class="mt-4 block font-bold">رابط صورة السؤال (اختياري)</label> <input id="admin-image-url" type="text" class="mt-2 w-full rounded-xl border border-purple-200 p-3">
+        <h2 class="canva-text ink font-extrabold text-xl">إضافة / تعديل سؤال</h2>
+        <label for="question-bank" class="mt-4 block font-bold">البنك</label> 
+        <select id="question-bank" required class="mt-2 w-full rounded-xl border border-purple-200 p-3" onchange="selectAdminBank(this.value)"></select> 
+        <label for="question-text-input" class="mt-4 block font-bold">نص السؤال</label> 
+        <textarea id="question-text-input" required rows="3" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></textarea>
+        
+        <!-- حقل رفع الصورة الجديد مع ImgBB كخيار أساسي و Imgur كاحتياطي -->
+        <label for="admin-image-url" class="mt-4 block font-bold">رابط صورة السؤال (احتياطي - Imgur أو غيره)</label> 
+        <input id="admin-image-url" type="url" dir="ltr" class="mt-2 w-full rounded-xl border border-purple-200 p-3" placeholder="أو الصق رابط خارجي هنا..." oninput="updatePreviewFromUrl()">
+        
+        <label for="admin-image-upload" class="mt-4 block font-bold text-purple-700">الرفع التلقائي (ارفع ملف أو انسخ والصق الصورة هنا 📋)</label> 
+        <input id="admin-image-upload" type="file" accept="image/*" class="mt-2 w-full rounded-xl border-2 border-dashed border-purple-400 p-3 bg-purple-50">
+        
+        <div id="image-preview-container" class="mt-3 hidden">
+            <img id="image-preview" class="max-h-48 rounded-xl border border-purple-200 object-contain bg-slate-50">
+            <button type="button" onclick="removeImage()" class="mt-2 text-sm text-red-600 font-bold">إزالة الصورة</button>
+        </div>
+
         <div class="mt-3 grid grid-cols-2 gap-3">
          <input id="opt-a" required placeholder="الخيار A" class="rounded-xl border border-purple-200 p-3"> <input id="opt-b" required placeholder="الخيار B" class="rounded-xl border border-purple-200 p-3"> <input id="opt-c" required placeholder="الخيار C" class="rounded-xl border border-purple-200 p-3"> <input id="opt-d" required placeholder="الخيار D" class="rounded-xl border border-purple-200 p-3">
         </div><label for="correct-answer" class="mt-4 block font-bold">الإجابة الصحيحة</label> <select id="correct-answer" class="mt-2 w-full rounded-xl border border-purple-200 p-3"><option>A</option><option>B</option><option>C</option><option>D</option></select> <label for="explanation" class="mt-4 block font-bold">التفسير</label> <textarea id="explanation" rows="2" class="mt-2 w-full rounded-xl border border-purple-200 p-3"></textarea> <button type="submit" class="canva-button mt-5 w-full rounded-xl bg-purple-700 py-3 font-bold text-white">حفظ السؤال</button>
@@ -310,10 +333,12 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-    import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+    import { getFirestore, collection, getDocs, getDoc, doc, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
     
     window.dataSdk = {
         _db: null,
+        _auth: null,
         async init(handler) {
             try {
                 const firebaseConfig = {
@@ -327,8 +352,10 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
                 
                 const app = initializeApp(firebaseConfig);
                 this._db = getFirestore(app);
+                this._auth = getAuth(app);
                 this.collection = collection;
                 this.getDocs = getDocs;
+                this.getDoc = getDoc;
                 this.doc = doc;
                 this.setDoc = setDoc;
                 this.deleteDoc = deleteDoc;
@@ -354,6 +381,14 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
                 return { isOk: false };
             }
         },
+        async login(email, password) {
+            try {
+                await signInWithEmailAndPassword(this._auth, email, password);
+                return { isOk: true };
+            } catch(e) {
+                return { isOk: false };
+            }
+        },
         async create(record) {
             try {
                 const id = record._uid || "rec_" + Date.now() + Math.random().toString(36).slice(2,8);
@@ -373,14 +408,52 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
             try {
                 const id = record._uid || record.__backendId;
                 await this.deleteDoc(this.doc(this._db, "vet_records", String(id)));
+                if (record.type === 'bank') {
+                    await this.deleteDoc(this.doc(this._db, "vet_questions", String(id))); 
+                }
                 return { isOk: true };
             } catch (e) { return { isOk: false }; }
+        },
+        async getBankQuestions(bankId) {
+            try {
+                const docSnap = await this.getDoc(this.doc(this._db, "vet_questions", String(bankId)));
+                if(docSnap.exists()) return docSnap.data().questions_json || "[]";
+                return "[]";
+            } catch(e) { return "[]"; }
+        },
+        async saveBankQuestions(bankId, questionsJson) {
+            try {
+                await this.setDoc(this.doc(this._db, "vet_questions", String(bankId)), { questions_json: questionsJson }, { merge: true });
+                return { isOk: true };
+            } catch(e) { return { isOk: false }; }
         }
     };
 
+    // كود الرفع الخاص بـ ImgBB 
+    async function uploadToImgBB(blob) {
+        const formData = new FormData();
+        formData.append("image", blob, "question_image.jpg");
+        try {
+            // المفتاح الخاص بك تم إدراجه هنا
+            const response = await fetch("https://api.imgbb.com/1/upload?key=a590777d9f69147c384eb9a15c4ee481", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+            if (data.success) {
+                return data.data.url;
+            }
+            console.error("ImgBB Error:", data);
+            return null;
+        } catch (e) {
+            console.error("Upload error", e);
+            return null;
+        }
+    }
+
     const years = [1,2,3,4,5,6];
     const semesters = ["الفصل الأول","الفصل الثاني","الفصل الصيفي"];
-    const blank = {type:"",year:"",semester:"",subject_name:"",subject_year:"",subject_semester:"",bank_name:"",author_name:"",bank_id:"",questions_json:"[]",subject_id:"",order_index:0,site_name:"",logo_url:"",logo_background:"",flagged_ids:"[]",progress_bank_id:"",progress_question_index:0,progress_answers:"{}",progress_elapsed:0,dark_mode:"no",progress_order:"",_uid:""};
+    const blank = {type:"",year:"",semester:"",subject_name:"",subject_year:"",subject_semester:"",bank_name:"",author_name:"",bank_id:"",subject_id:"",order_index:0,site_name:"",logo_url:"",logo_background:"",flagged_ids:"[]",progress_bank_id:"",progress_question_index:0,progress_answers:"{}",progress_elapsed:0,dark_mode:"no",progress_order:"",_uid:""};
     const appState = {records:[],year:"",semester:"",subject:null,bank:null,questions:[],index:0,answers:{},flagged:[],started:0,timer:null,user:null,adminSubjectId:"",adminBankId:"",editing:{subject:null,bank:null,question:null},pendingDelete:null,pendingImport:[],savingUser:false};
     
     window.appState = appState;
@@ -441,21 +514,31 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       logoTaps++;
       clearTimeout(logoTimer);
       logoTimer=setTimeout(()=>logoTaps=0,1800);
-      if(logoTaps>=5){ logoTaps=0; $("admin-pin-error").classList.add("hidden"); $("admin-pin-input").value=""; showView("admin-pin-view"); }
+      if(logoTaps>=5){ logoTaps=0; $("admin-pin-error").classList.add("hidden"); $("admin-email-input").value=""; $("admin-pass-input").value=""; showView("admin-pin-view"); }
       else goHome();
     }
     window.handleLogoTap = handleLogoTap;
 
-    const ADMIN_PIN="Vt7Kp2Qz9m";
-    $("admin-pin-form").addEventListener("submit", e => {
+    $("admin-pin-form").addEventListener("submit", async e => {
       e.preventDefault();
-      const entered = $("admin-pin-input").value.trim();
-      if(entered === ADMIN_PIN){
+      const email = $("admin-email-input").value.trim();
+      const pass = $("admin-pass-input").value.trim();
+      const btn = e.submitter;
+      
+      btn.disabled = true;
+      btn.textContent = "جاري التحقق...";
+      
+      const res = await window.dataSdk.login(email, pass);
+      
+      btn.disabled = false;
+      btn.textContent = "دخول";
+      
+      if(res.isOk){
         $("admin-pin-error").classList.add("hidden");
         populateSelects(); renderAdmin(); showView("admin-view");
       } else {
+        $("admin-pin-error").textContent = "البريد الإلكتروني أو كلمة المرور غير صحيحة، أو لم تقم بتفعيل حسابك في Firebase.";
         $("admin-pin-error").classList.remove("hidden");
-        $("admin-pin-input").select();
       }
     });
 
@@ -524,14 +607,33 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       const items=records("bank").filter(b=>String(b.subject_id)===String(subjectId));
       $("banks-list").innerHTML=items.length ? items.map(bank=>`<button type="button" onclick="startQuiz('${getId(bank)}')" class="lift surface rounded-3xl border border-purple-100 bg-white p-6 text-right shadow-sm">
         <i data-lucide="files" class="h-8 w-8 text-purple-700"></i><strong class="ink mt-4 block text-xl">${esc(bank.bank_name)}</strong>
-        <small class="muted mt-2 block">${parseQuestions(bank).length} سؤال${bank.author_name ? ' · إعداد: ' + esc(bank.author_name) : ''}</small><span class="mt-3 block font-bold text-purple-700">ابدأ المراجعة ←</span>
+        <small class="muted mt-2 block">${bank.questions_loaded ? parseQuestions(bank).length + ' سؤال' : 'انقر للمراجعة'}${bank.author_name ? ' · إعداد: ' + esc(bank.author_name) : ''}</small><span class="mt-3 block font-bold text-purple-700">ابدأ المراجعة ←</span>
       </button>`).join("") : `<p class="rounded-3xl border-2 border-dashed border-purple-200 bg-purple-50 p-8 text-center font-bold text-purple-800 sm:col-span-2">لا توجد بنوك أسئلة لهذه المادة حالياً.</p>`;
       showView("banks-view");
     }
     window.showBanks = showBanks;
 
-    function startQuiz(bankId){
+    async function fetchQuestionsIfNeed(bankId) {
+        const bank = records("bank").find(b=>getId(b)===bankId);
+        if(bank && !bank.questions_loaded) {
+            if(bank.questions_json && bank.questions_json.length > 10) {
+                bank.questions_loaded = true;
+                return;
+            }
+            const qJson = await window.dataSdk.getBankQuestions(bankId);
+            bank.questions_json = qJson;
+            bank.questions_loaded = true;
+        }
+    }
+    window.fetchQuestionsIfNeed = fetchQuestionsIfNeed;
+
+    async function startQuiz(bankId){
       appState.bank=records("bank").find(b=>String(getId(b))===String(bankId));
+      
+      $("quiz-timer").textContent = "تحميل...";
+      await fetchQuestionsIfNeed(bankId);
+      $("quiz-timer").textContent = "00:00";
+
       appState.questions=parseQuestions(appState.bank);
       if(!appState.questions.length){ toast("بنك الأسئلة هذا لا يحتوي على أسئلة بعد.","error"); return; }
       if(appState.user && appState.user.progress_bank_id===bankId){
@@ -614,9 +716,9 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
     window.finishQuiz = finishQuiz;
 
     async function persistUser(clear=false){
-      if(!window.dataSdk || appState.savingUser) return;
       const record={
-        ...blank,...(appState.user||{}),type:"user_state",flagged_ids:JSON.stringify(appState.flagged),
+        type:"user_state",
+        flagged_ids:JSON.stringify(appState.flagged),
         dark_mode:document.body.classList.contains("dark")?"yes":"no",
         progress_bank_id:clear?"":(appState.bank?getId(appState.bank):""),
         progress_question_index:clear?0:appState.index,
@@ -624,8 +726,10 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
         progress_elapsed:clear?0:Math.floor((Date.now()-appState.started)/1000),
         progress_order:clear?"":JSON.stringify(appState.questions.map(q=>q._uid))
       };
-      if(appState.user) await window.dataSdk.update(record);
-      else { appState.savingUser=true; const r=await window.dataSdk.create(record); appState.savingUser=false; if(r&&r.isOk&&r.data) appState.user=r.data; }
+      appState.user = record;
+      try {
+          localStorage.setItem('vet_bank_user_state', JSON.stringify(record));
+      } catch(e) { console.error("LocalStorage error", e); }
     }
     window.persistUser = persistUser;
 
@@ -655,7 +759,6 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       $("subject-semester").innerHTML=semesters.map(s=>`<option value="${s}">${s}</option>`).join("");
       const subjects=records("subject");
       $("bank-subject").innerHTML=subjects.map(s=>`<option value="${getId(s)}">${esc(s.subject_name)}</option>`).join("");
-      // تم نقل تحديث قوائم البنوك (question-bank و import-bank) إلى renderAdmin ليتم فلترتها ديناميكياً
     }
     window.populateSelects = populateSelects;
 
@@ -673,7 +776,7 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       if(!banks.some(b=>String(getId(b))===String(appState.adminBankId))) appState.adminBankId=banks[0]?getId(banks[0]):"";
       
       $("admin-subject-list").innerHTML=subjects.length ? subjects.map(s=>`<div class="flex gap-2"><button onclick="selectAdminSubject('${getId(s)}')" class="flex-1 rounded-xl border border-purple-100 p-3 text-right font-bold ${String(getId(s))===String(appState.adminSubjectId)?"bg-purple-700 text-white":"bg-white text-purple-950"}">${esc(s.subject_name)}<small class="mt-1 block opacity-75">${s.year} · ${esc(s.semester)}</small></button><button onclick="openSubjectForm('${getId(s)}')" class="rounded-xl bg-blue-50 px-3 text-sm text-blue-700">تعديل</button><button onclick="askDelete('subject','${getId(s)}')" class="rounded-xl bg-red-50 px-3 text-sm text-red-700">حذف</button></div>`).join("") : `<p class="muted text-sm">لا توجد مواد تطابق الفلتر.</p>`;
-      $("admin-bank-list").innerHTML=banks.length ? banks.map(b=>`<div class="flex gap-2"><button onclick="selectAdminBank('${getId(b)}')" class="flex-1 rounded-xl border border-purple-100 p-3 text-right font-bold ${String(getId(b))===String(appState.adminBankId)?"bg-purple-700 text-white":"bg-white text-purple-950"}">${esc(b.bank_name)}<small class="mt-1 block opacity-75">${parseQuestions(b).length} سؤال</small></button><button onclick="openBankForm('${getId(b)}')" class="rounded-xl bg-blue-50 px-3 text-sm text-blue-700">تعديل</button><button onclick="askDelete('bank','${getId(b)}')" class="rounded-xl bg-red-50 px-3 text-sm text-red-700">حذف</button></div>`).join("") : `<p class="muted text-sm">أضف أو اختر مادة لعرض بنوكها.</p>`;
+      $("admin-bank-list").innerHTML=banks.length ? banks.map(b=>`<div class="flex gap-2"><button onclick="selectAdminBank('${getId(b)}')" class="flex-1 rounded-xl border border-purple-100 p-3 text-right font-bold ${String(getId(b))===String(appState.adminBankId)?"bg-purple-700 text-white":"bg-white text-purple-950"}">${esc(b.bank_name)}<small class="mt-1 block opacity-75">${b.questions_loaded ? parseQuestions(b).length + ' سؤال' : 'اضغط لجلب الأسئلة'}</small></button><button onclick="openBankForm('${getId(b)}')" class="rounded-xl bg-blue-50 px-3 text-sm text-blue-700">تعديل</button><button onclick="askDelete('bank','${getId(b)}')" class="rounded-xl bg-red-50 px-3 text-sm text-red-700">حذف</button></div>`).join("") : `<p class="muted text-sm">أضف أو اختر مادة لعرض بنوكها.</p>`;
       
       if($("question-bank")) {
           $("question-bank").innerHTML = banks.length ? banks.map(b=>`<option value="${getId(b)}">${esc(b.bank_name)}</option>`).join("") : `<option value="">لا توجد بنوك لهذه المادة</option>`;
@@ -690,13 +793,24 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
 
     function selectAdminSubject(id){ appState.adminSubjectId=id; appState.adminBankId=""; renderAdmin(); }
     window.selectAdminSubject = selectAdminSubject;
-    function selectAdminBank(id){ appState.adminBankId=id; renderAdmin(); }
+    
+    async function selectAdminBank(id){ 
+        appState.adminBankId=id; 
+        const bank = records("bank").find(b=>getId(b)===id);
+        if(bank && !bank.questions_loaded) {
+            $("admin-message").textContent = "جاري تحميل بيانات البنك...";
+            $("admin-message").classList.remove("hidden");
+            await fetchQuestionsIfNeed(id);
+            $("admin-message").classList.add("hidden");
+        }
+        renderAdmin(); 
+    }
     window.selectAdminBank = selectAdminBank;
 
     function renderAdminQuestions(){
       const bank=records("bank").find(b=>getId(b)===appState.adminBankId);
       $("selected-bank-caption").textContent=bank?bank.bank_name:"اختر بنك أسئلة لعرض أسئلته.";
-      if(!bank){ $("admin-question-table").innerHTML=`<p class="muted rounded-2xl border border-dashed border-purple-200 p-7 text-center">لا يوجد بنك محدد.</p>`; return; }
+      if(!bank || !bank.questions_loaded){ $("admin-question-table").innerHTML=`<p class="muted rounded-2xl border border-dashed border-purple-200 p-7 text-center">يرجى الضغط على البنك لجلب وعرض الأسئلة.</p>`; return; }
       const term=$("question-search")?$("question-search").value.trim().toLowerCase():"";
       const qs=parseQuestions(bank).filter(q=>!term||[q.question_text,q.option_a,q.option_b,q.option_c,q.option_d].join(" ").toLowerCase().includes(term));
       $("admin-question-table").innerHTML=qs.length ? `<table class="w-full text-right"><thead class="border-b border-purple-100 text-sm text-purple-700"><tr><th class="p-3">#</th><th class="p-3">السؤال</th><th class="p-3">الإجابة</th><th class="p-3">إجراء</th></tr></thead><tbody>${qs.map((q,i)=>`<tr class="table-row border-b border-purple-50"><td class="p-3">${i+1}</td><td class="p-3 font-bold">${esc(q.question_text)}</td><td class="p-3">${q.correct_answer}</td><td class="p-3 whitespace-nowrap"><button onclick="openQuestionForm('${q._uid}')" class="rounded-lg bg-purple-100 px-3 py-2 text-sm font-bold text-purple-800">تعديل</button><button onclick="askDelete('question','${q._uid}')" class="mr-1 rounded-lg bg-red-50 px-3 py-2 text-sm font-bold text-red-700">حذف</button></td></tr>`).join("")}</tbody></table>` : `<p class="muted rounded-2xl border border-dashed border-purple-200 p-7 text-center">لا توجد أسئلة بعد.</p>`;
@@ -760,6 +874,86 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       } catch { toast("تعذر استعادة البيانات: تحقق من صيغة JSON.","error"); }
     }
     window.restoreBackup = restoreBackup;
+
+    async function compressImage(file, maxWidth = 900) {
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (event) => {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const scaleSize = maxWidth / img.width;
+                    let w = img.width;
+                    let h = img.height;
+                    if (scaleSize < 1) {
+                        w = img.width * scaleSize;
+                        h = img.height * scaleSize;
+                    }
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, w, h);
+                    canvas.toBlob((blob) => {
+                        resolve(blob);
+                    }, 'image/jpeg', 0.6);
+                };
+            };
+        });
+    }
+
+    $("admin-image-upload").addEventListener("change", function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            $("admin-image-url").value = ""; // مسح الرابط اليدوي عند اختيار ملف
+            showPreview(file);
+        }
+    });
+
+    document.addEventListener("paste", function(e) {
+        if($("question-form").classList.contains("hidden")) return;
+        const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+        for (let item of items) {
+            if (item.kind === 'file' && item.type.startsWith('image/')) {
+                const file = item.getAsFile();
+                const dt = new DataTransfer();
+                dt.items.add(file);
+                $("admin-image-upload").files = dt.files;
+                $("admin-image-url").value = ""; // مسح الرابط اليدوي عند لصق ملف
+                showPreview(file);
+            }
+        }
+    });
+
+    function showPreview(file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+            $("image-preview").src = e.target.result;
+            $("image-preview-container").classList.remove("hidden");
+        };
+        reader.readAsDataURL(file);
+    }
+    
+    function updatePreviewFromUrl() {
+        const url = $("admin-image-url").value.trim();
+        if(url) {
+            $("image-preview").src = url;
+            $("image-preview-container").classList.remove("hidden");
+            $("admin-image-upload").value = ""; 
+        } else if($("admin-image-upload").files.length === 0) {
+            $("image-preview-container").classList.add("hidden");
+            $("image-preview").src = "";
+        }
+    }
+    window.updatePreviewFromUrl = updatePreviewFromUrl;
+
+    window.removeImage = function() {
+        $("admin-image-upload").value = "";
+        $("admin-image-url").value = "";
+        $("image-preview").src = "";
+        $("image-preview-container").classList.add("hidden");
+    };
     
     function closeForms(){ ["subject-form","bank-form","question-form"].forEach(id=>$(id).classList.add("hidden")); appState.editing={subject:null,bank:null,question:null}; }
     window.closeForms = closeForms;
@@ -783,7 +977,16 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       const item=uid?records("bank").flatMap(parseQuestions).find(q=>q._uid===uid):null;
       appState.editing.question=item;
       $("question-form").classList.remove("hidden"); $("question-bank").value=appState.adminBankId;
-      $("question-text-input").value=item?item.question_text:""; $("admin-image-url").value=item?item.image_url||"":""; $("opt-a").value=item?item.option_a:""; $("opt-b").value=item?item.option_b:""; $("opt-c").value=item?item.option_c:""; $("opt-d").value=item?item.option_d:""; $("correct-answer").value=item?item.correct_answer:"A"; $("explanation").value=item?item.explanation:"";
+      $("question-text-input").value=item?item.question_text:""; 
+      
+      window.removeImage();
+      if(item && item.image_url) {
+          $("image-preview").src = item.image_url;
+          $("image-preview-container").classList.remove("hidden");
+          $("admin-image-url").value = item.image_url;
+      }
+      
+      $("opt-a").value=item?item.option_a:""; $("opt-b").value=item?item.option_b:""; $("opt-c").value=item?item.option_c:""; $("opt-d").value=item?item.option_d:""; $("correct-answer").value=item?item.correct_answer:"A"; $("explanation").value=item?item.explanation:"";
     }
     window.openQuestionForm = openQuestionForm;
 
@@ -814,7 +1017,7 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
 
     $("bank-form").addEventListener("submit",async e=>{
       e.preventDefault(); const current=appState.editing.bank, btn=e.submitter;
-      const record={...blank,type:"bank",subject_id:$("bank-subject").value,bank_name:$("bank-name").value.trim(),author_name:$("bank-author").value.trim(),questions_json:current?current.questions_json:"[]",_uid:current?current._uid:("bank-"+Date.now()+"-"+Math.random().toString(36).slice(2,8))};
+      const record={...blank,type:"bank",subject_id:$("bank-subject").value,bank_name:$("bank-name").value.trim(),author_name:$("bank-author").value.trim(),questions_json:"[]",_uid:current?current._uid:("bank-"+Date.now()+"-"+Math.random().toString(36).slice(2,8))};
       btn.disabled=true;
       const result=current?await window.dataSdk.update({...current,...record}):await window.dataSdk.create(record);
       btn.disabled=false;
@@ -824,17 +1027,49 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
     $("question-form").addEventListener("submit",async e=>{
       e.preventDefault(); const btn=e.submitter, bank=records("bank").find(b=>getId(b)===$("question-bank").value);
       if(!bank){ showMessage("اختر بنك الأسئلة أولاً.",true); return; }
-      const imgUrl = $("admin-image-url").value.trim();
-      if(imgUrl.length > 2000){ showMessage("الرابط طويل جداً (Base64). استخدم رابطاً مباشراً قصيراً.",true); return; }
+      
+      let imgUrl = $("admin-image-url").value.trim();
+      const fileInput = $("admin-image-upload");
+      
+      btn.disabled=true;
+      
+      if (fileInput.files.length > 0) {
+          btn.textContent = "جاري ضغط ورفع الصورة لـ ImgBB...";
+          const compressedBlob = await compressImage(fileInput.files[0]);
+          const uploadedUrl = await uploadToImgBB(compressedBlob);
+          if (uploadedUrl) {
+              imgUrl = uploadedUrl;
+          } else {
+              showMessage("تعذر رفع الصورة لـ ImgBB، يرجى المحاولة مرة أخرى.", true);
+              btn.disabled = false;
+              btn.textContent = "حفظ السؤال";
+              return;
+          }
+      }
+      
+      btn.textContent = "جاري الحفظ...";
       const questions=parseQuestions(bank), current=appState.editing.question;
       const question={question_text:$("question-text-input").value.trim(),image_url:imgUrl,option_a:$("opt-a").value.trim(),option_b:$("opt-b").value.trim(),option_c:$("opt-c").value.trim(),option_d:$("opt-d").value.trim(),correct_answer:$("correct-answer").value,explanation:$("explanation").value.trim(),_uid:current?current._uid:"q-"+Date.now()+"-"+Math.random().toString(36).slice(2,6)};
       const index=questions.findIndex(q=>q._uid===question._uid);
       if(index>=0) questions[index]=question; else questions.push(question);
-      const updatedBank = {...bank, questions_json:JSON.stringify(questions)};
-      btn.disabled=true;
-      const result=await window.dataSdk.update(updatedBank);
+      
+      const updatedQuestionsJson = JSON.stringify(questions);
+      
+      const result = await window.dataSdk.saveBankQuestions(getId(bank), updatedQuestionsJson);
+      
       btn.disabled=false;
-      if(result.isOk){ syncLocal(updatedBank, result); closeForms(); showMessage("تم حفظ السؤال بنجاح."); } else showMessage("تعذر حفظ السؤال.",true);
+      btn.textContent = "حفظ السؤال";
+      
+      if(result.isOk){ 
+          bank.questions_json = updatedQuestionsJson; 
+          bank.questions_loaded = true;
+          renderAdminQuestions(); 
+          closeForms(); 
+          window.removeImage(); 
+          showMessage("تم حفظ السؤال بنجاح."); 
+      } else {
+          showMessage("تعذر حفظ السؤال.",true);
+      }
     });
 
     function askDelete(type,id){
@@ -854,7 +1089,11 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       let result={isOk:false};
       if(action.type==="question"){
         const bank=records("bank").find(b=>parseQuestions(b).some(q=>q._uid===action.id));
-        if(bank) result=await window.dataSdk.update({...bank,questions_json:JSON.stringify(parseQuestions(bank).filter(q=>q._uid!==action.id))});
+        if(bank) {
+            const newQJson = JSON.stringify(parseQuestions(bank).filter(q=>q._uid!==action.id));
+            result = await window.dataSdk.saveBankQuestions(getId(bank), newQJson);
+            if(result.isOk) bank.questions_json = newQJson;
+        }
       } else if(action.type==="bank"){
         const bank=records("bank").find(b=>String(getId(b))===String(action.id)); if(bank) result=await window.dataSdk.delete(bank);
       } else {
@@ -866,8 +1105,7 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       btn.disabled=false; closeDeleteModal();
       if(result.isOk){
         if(action.type==="question"){
-          const bank=records("bank").find(b=>parseQuestions(b).some(q=>q._uid===action.id));
-          if(bank) bank.questions_json=JSON.stringify(parseQuestions(bank).filter(q=>q._uid!==action.id));
+          // handled above
         } else if(action.type==="bank"){
           appState.records=appState.records.filter(r=>!(r.type==="bank"&&String(getId(r))===String(action.id)));
         } else {
@@ -913,7 +1151,7 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
         if (incoming.length === 0) {
             $("sheet-status").innerHTML = `<span class="rounded-lg bg-green-100 px-3 py-1 text-green-700">قاعدة البيانات جاهزة: 0 سجلات</span>`;
         } else {
-            $("sheet-status").innerHTML = `<span class="rounded-lg bg-green-100 px-3 py-1 text-green-700">✅ متصل بـ : ${incoming.length} سجل</span>`;
+            $("sheet-status").innerHTML = `<span class="rounded-lg bg-green-100 px-3 py-1 text-green-700">✅ متصل بـ Firebase: ${incoming.length} سجل</span>`;
         }
 
         appState.records = incoming.map(record => {
@@ -922,18 +1160,20 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
             if (!normalized.type && normalized.TYPE) normalized.type = normalized.TYPE;
             if (!normalized.type && normalized.bank_name != null) normalized.type = "bank";
             if (!normalized.type && normalized.subject_name != null) normalized.type = "subject";
-            if (!normalized.type && (normalized.progress_bank_id != null || normalized.progress_answers != null || normalized.dark_mode != null)) normalized.type = "user_state";
             normalized.type = String(normalized.type || "").trim().toLowerCase();
             if (normalized._uid != null) normalized._uid = String(normalized._uid).trim();
             if (normalized.__backendId != null) normalized.__backendId = String(normalized.__backendId);
             return normalized;
-        }).filter(record => record.type);
+        }).filter(record => record.type && record.type !== "user_state");
 
-        appState.user = appState.records.find(r => String(r.type || "").trim().toLowerCase() === "user_state") || null;
-        if (appState.user) {
-            try { appState.flagged = JSON.parse(appState.user.flagged_ids || "[]"); } catch { appState.flagged = []; }
-            document.body.classList.toggle("dark", appState.user.dark_mode === "yes");
-        }
+        try {
+            const localState = localStorage.getItem('vet_bank_user_state');
+            if(localState) {
+                appState.user = JSON.parse(localState);
+                try { appState.flagged = JSON.parse(appState.user.flagged_ids || "[]"); } catch { appState.flagged = []; }
+                document.body.classList.toggle("dark", appState.user.dark_mode === "yes");
+            }
+        } catch(e) { console.error("Error loading local state", e); }
         
         renderYears(); 
         populateSelects(); 
@@ -943,7 +1183,7 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
     async function initialize(){
       icons(); 
       renderYears();
-      initialLoadTimer = setTimeout(() => { $("sheet-status").textContent = "جاري الاتصال بـ ..."; }, 3000);
+      initialLoadTimer = setTimeout(() => { $("sheet-status").textContent = "جاري الاتصال بـ Firebase..."; }, 3000);
       
       const result = await window.dataSdk.init();
       
@@ -1014,14 +1254,16 @@ Answer: B"></textarea> <button type="submit" class="mt-4 rounded-xl bg-purple-70
       if(!bank) return showMessage("البنك غير موجود",true);
       button.disabled=true; button.textContent="جاري الحفظ...";
       try {
+        await fetchQuestionsIfNeed(bankId);
         const questions=parseQuestions(bank);
         items.forEach((item,i)=>questions.push({...item,_uid:"import-"+Date.now()+"-"+i+"-"+Math.random().toString(36).slice(2)}));
-        const result=await window.dataSdk.update({...bank,questions_json:JSON.stringify(questions)});
+        const newQJson = JSON.stringify(questions);
+        const result = await window.dataSdk.saveBankQuestions(bankId, newQJson);
         if(result.isOk){
-          bank.questions_json=JSON.stringify(questions);
+          bank.questions_json=newQJson;
           $("import-preview").classList.add("hidden"); $("import-text").value=""; appState.pendingImport=[];
           appState.adminBankId=bankId; renderAdmin(); showMessage(`تم حفظ ${items.length} سؤال بنجاح.`);
-        } else toast("تعذر الاستيراد، قد يكون حجم النص كبيراً.","error");
+        } else toast("تعذر الاستيراد، تأكد من تسجيل دخول الإدارة.","error");
       } catch { toast("حدث خطأ أثناء الاستيراد.","error"); }
       finally { button.disabled=false; button.textContent="تأكيد الاستيراد"; }
     }
